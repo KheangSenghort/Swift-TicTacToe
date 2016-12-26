@@ -10,7 +10,6 @@ import UIKit
 
 class GameViewController: UIViewController {
     
-    
     @IBOutlet weak var gridItemView_0: GridItemView!
     @IBOutlet weak var gridItemView_1: GridItemView!
     @IBOutlet weak var gridItemView_2: GridItemView!
@@ -21,15 +20,9 @@ class GameViewController: UIViewController {
     @IBOutlet weak var gridItemView_7: GridItemView!
     @IBOutlet weak var gridItemView_8: GridItemView!
     
-    let gridItemsViews2: [GridItemView] = {
-        var items = [GridItemView]()
-        for _ in 0..<1 {
-            items.append(GridItemView())
-        }
-        return items
-    }()
-    
+    var currentPlayer = Game.Player.O
     var gridItemsViews = [GridItemView]()
+    let gameBoard = GameBoard()
     
     func setupViews() {
         view.backgroundColor = .white
@@ -38,11 +31,27 @@ class GameViewController: UIViewController {
                           gridItemView_3, gridItemView_4, gridItemView_5,
                           gridItemView_6, gridItemView_7, gridItemView_8]
         
-        gridItemView_0.initializeView()
+        for (index, gridItemView) in gridItemsViews.enumerated() {
+            gridItemView.index = index
+            gridItemView.onViewTap = handleDidTapGridItem
+        }
         
-        /*for gridItem in gridItems {
-            view.addSubview(gridItem.imageView)
-        }*/
+        gameBoard.reset()
+    }
+    
+    func handleDidTapGridItem(gesture: UITapGestureRecognizer) {
+        if let itemView = gesture.view as? GridItemView {
+            //print("new tapped \(itemView.index)")
+            if gameBoard.markGridItem(at: itemView.index, with: currentPlayer) {
+                itemView.currentPlayer = currentPlayer
+                currentPlayer = currentPlayer.flip()
+            }
+        }
+    }
+    
+    @IBAction func resetPressed(_ sender: Any) {
+        gameBoard.reset()
+        _ = gridItemsViews.map { $0.reset() }
     }
 
     override func viewDidLoad() {
