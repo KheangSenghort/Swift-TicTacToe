@@ -20,11 +20,17 @@ class GameViewController: UIViewController {
     @IBOutlet weak var gridItemView_7: GridItemView!
     @IBOutlet weak var gridItemView_8: GridItemView!
     
-    var currentPlayer = Game.Player.O
-    var gridItemsViews = [GridItemView]()
-    let gameBoard = GameBoard()
+    @IBOutlet weak var gameStatusLabel: UILabel!
+    @IBOutlet weak var gameScoreLabel: UILabel!
     
-    func setupViews() {
+    private let statusPlayerText = "Player"
+    private let statusActiveText = "Turn"
+    private let statusDrawText = "Game Is A Draw!"
+    private let statusWonText = "Won!"
+    private let gameManager = GameManager()
+    private var gridItemsViews = [GridItemView]()
+    
+    private func setupViews() {
         view.backgroundColor = .white
         
         gridItemsViews = [gridItemView_0, gridItemView_1, gridItemView_2,
@@ -36,21 +42,45 @@ class GameViewController: UIViewController {
             gridItemView.onViewTap = handleDidTapGridItem
         }
         
-        gameBoard.reset()
+        gameManager.onGameStatusUpdate = gameStatusUpdated
+        gameManager.startNewGame()
+        updateGameScoreLabel()
     }
     
-    func handleDidTapGridItem(gesture: UITapGestureRecognizer) {
+    private func handleDidTapGridItem(gesture: UITapGestureRecognizer) {
         if let itemView = gesture.view as? GridItemView {
-            //print("new tapped \(itemView.index)")
-            if gameBoard.markGridItem(at: itemView.index, with: currentPlayer) {
+            // store the player who made the move
+            let currentPlayer = gameManager.currentPlayer
+            if gameManager.makeMove(at: itemView.index) {
                 itemView.currentPlayer = currentPlayer
-                currentPlayer = currentPlayer.flip()
             }
         }
     }
     
-    @IBAction func resetPressed(_ sender: Any) {
-        gameBoard.reset()
+    private func gameStatusUpdated(_ status: Game.Status) {
+        switch status {
+        case .Active:
+            gameStatusLabel.text = "\(statusPlayerText) \(gameManager.currentPlayer.rawValue) \(statusActiveText)"
+        case .Draw:
+            gameStatusLabel.text = "\(statusDrawText)"
+            updateGameScoreLabel()
+        case .Won:
+            gameStatusLabel.text = "\(statusPlayerText) \(gameManager.currentPlayer.rawValue) \(statusWonText)"
+            updateGameScoreLabel()
+        }
+    }
+    
+    private func updateGameScoreLabel() {
+        let gameSession = gameManager.session
+        let playerXScore = gameSession.wins[Game.Player.X] ?? 0
+        let playerOScore = gameSession.wins[Game.Player.O] ?? 0
+        let ties = gameSession.draws
+        
+        gameScoreLabel.text = "\(Game.Player.X): \(playerXScore)    \(Game.Player.O): \(playerOScore)   \("TIES"): \(ties)"
+    }
+    
+    @IBAction func newGameButtonPressed(_ sender: Any) {
+        gameManager.startNewGame()
         _ = gridItemsViews.map { $0.reset() }
     }
 
