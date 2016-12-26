@@ -21,7 +21,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IyN-xd-5lv" customClass="VisibleGridItem" customModule="Swift_TicTacToe" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IyN-xd-5lv" customClass="GridItemView" customModule="Swift_TicTacToe" customModuleProvider="target">
                                 <rect key="frame" x="147" y="293" width="80" height="80"/>
                                 <color key="backgroundColor" red="0.87148232979999996" green="0.27359626349999999" blue="0.00025193904429999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -29,7 +29,7 @@
                                     <constraint firstAttribute="width" constant="80" id="x28-I6-fpm"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i30-Ao-j5U" customClass="VisibleGridItem" customModule="Swift_TicTacToe" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i30-Ao-j5U" customClass="GridItemView" customModule="Swift_TicTacToe" customModuleProvider="target">
                                 <rect key="frame" x="235" y="293" width="80" height="80"/>
                                 <color key="backgroundColor" red="0.87148232979999996" green="0.27359626349999999" blue="0.00025193904429999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -37,7 +37,7 @@
                                     <constraint firstAttribute="width" constant="80" id="wsb-HL-eYJ"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ksr-ov-PMk" customClass="VisibleGridItem" customModule="Swift_TicTacToe" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ksr-ov-PMk" customClass="GridItemView" customModule="Swift_TicTacToe" customModuleProvider="target">
                                 <rect key="frame" x="59" y="293" width="80" height="80"/>
                                 <color key="backgroundColor" red="0.87148232979999996" green="0.27359626349999999" blue="0.00025193904429999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -45,7 +45,7 @@
                                     <constraint firstAttribute="width" constant="80" id="kKi-QO-EOj"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e6D-kS-GKm" customClass="VisibleGridItem" customModule="Swift_TicTacToe" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e6D-kS-GKm" customClass="GridItemView" customModule="Swift_TicTacToe" customModuleProvider="target">
                                 <rect key="frame" x="147" y="205" width="80" height="80"/>
                                 <color key="backgroundColor" red="0.87148232979999996" green="0.27359626349999999" blue="0.00025193904429999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -53,7 +53,7 @@
                                     <constraint firstAttribute="width" constant="80" id="dq4-rd-DnX"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lAl-PG-kGP" customClass="VisibleGridItem" customModule="Swift_TicTacToe" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lAl-PG-kGP" customClass="GridItemView" customModule="Swift_TicTacToe" customModuleProvider="target">
                                 <rect key="frame" x="235" y="205" width="80" height="80"/>
                                 <color key="backgroundColor" red="0.87148232979999996" green="0.27359626349999999" blue="0.00025193904429999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -61,7 +61,7 @@
                                     <constraint firstAttribute="height" constant="80" id="IT0-pt-Gc4"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PVU-wG-wXX" customClass="VisibleGridItem" customModule="Swift_TicTacToe" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PVU-wG-wXX" customClass="GridItemView" customModule="Swift_TicTacToe" customModuleProvider="target">
                                 <rect key="frame" x="59" y="205" width="80" height="80"/>
                                 <color key="backgroundColor" red="0.87148232979999996" green="0.27359626349999999" blue="0.00025193904429999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -69,7 +69,7 @@
                                     <constraint firstAttribute="height" constant="80" id="x1u-fL-bCx"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dIe-R6-2rY" customClass="VisibleGridItem" customModule="Swift_TicTacToe" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dIe-R6-2rY" customClass="GridItemView" customModule="Swift_TicTacToe" customModuleProvider="target">
                                 <rect key="frame" x="147" y="381" width="80" height="80"/>
                                 <color key="backgroundColor" red="0.87148232979999996" green="0.27359626349999999" blue="0.00025193904429999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -77,7 +77,7 @@
                                     <constraint firstAttribute="height" constant="80" id="zj0-ge-fgc"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cya-tu-hkR" customClass="VisibleGridItem" customModule="Swift_TicTacToe" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cya-tu-hkR" customClass="GridItemView" customModule="Swift_TicTacToe" customModuleProvider="target">
                                 <rect key="frame" x="235" y="381" width="80" height="80"/>
                                 <color key="backgroundColor" red="0.87148232979999996" green="0.27359626349999999" blue="0.00025193904429999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -85,7 +85,7 @@
                                     <constraint firstAttribute="height" constant="80" id="UdZ-lj-3wC"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MCB-Jy-4ym" customClass="VisibleGridItem" customModule="Swift_TicTacToe" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MCB-Jy-4ym" customClass="GridItemView" customModule="Swift_TicTacToe" customModuleProvider="target">
                                 <rect key="frame" x="59" y="381" width="80" height="80"/>
                                 <color key="backgroundColor" red="0.87148232979999996" green="0.27359626349999999" blue="0.00025193904429999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -116,6 +116,17 @@
                             <constraint firstItem="dIe-R6-2rY" firstAttribute="centerX" secondItem="pxM-nY-dc3" secondAttribute="centerX" id="vfp-j1-Lqu"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="gridItemView_0" destination="PVU-wG-wXX" id="cwt-Ng-DX8"/>
+                        <outlet property="gridItemView_1" destination="e6D-kS-GKm" id="vhp-eK-twr"/>
+                        <outlet property="gridItemView_2" destination="lAl-PG-kGP" id="YjM-rK-9t2"/>
+                        <outlet property="gridItemView_3" destination="ksr-ov-PMk" id="hb5-69-bXJ"/>
+                        <outlet property="gridItemView_4" destination="IyN-xd-5lv" id="FMI-v8-lhv"/>
+                        <outlet property="gridItemView_5" destination="i30-Ao-j5U" id="usa-sT-yfo"/>
+                        <outlet property="gridItemView_6" destination="MCB-Jy-4ym" id="Prs-s4-iOj"/>
+                        <outlet property="gridItemView_7" destination="dIe-R6-2rY" id="WkQ-0I-qX3"/>
+                        <outlet property="gridItemView_8" destination="cya-tu-hkR" id="apz-rm-5H4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ihW-L4-W5Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

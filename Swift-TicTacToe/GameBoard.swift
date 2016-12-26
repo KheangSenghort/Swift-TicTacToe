@@ -8,26 +8,59 @@
 
 import UIKit
 
-protocol GridItem {
+struct Game {
+    struct Board {
+        static let Width = 3
+        static let Height = 3
+    }
+    
+    struct Player {
+        static let Count = 2
+        static let X = "X"
+        static let O = "O"
+    }
+    
+    struct PlayerSprite {
+        static let X = "playerO"
+        static let O = "playerX"
+        static let Empty = "empty"
+    }
+}
+
+/*protocol GridItem {
+    
+    
+}*/
+
+class GridItem {
     
     
 }
 
-enum Player: String {
-    case Player1 = "playerO"
-    case Player2 = "playerX"
-    case None = "empty"
+class GameBoard {
+    
+    private func map2Dto1D(_ pos:(x: Int, y: Int)) -> Int {
+        return pos.x + Game.Board.Width * pos.y;
+    }
+    
+    private func map1Dto2D(_ index: Int) -> (x: Int, y: Int) {
+        let x = index % Game.Board.Width;
+        let y = index / Game.Board.Width;
+        return (x, y)
+    }
 }
 
-class VisibleGridItem: UIView {
+class GridItemView: UIView {
 
     let imageView: UIImageView = {
-        let image = UIImageView(image: UIImage(named: Player.None.rawValue))
+        let image = UIImageView(image: UIImage(named: Game.PlayerSprite.O))
         image.contentMode = .scaleAspectFit
         image.backgroundColor = .yellow
         image.isUserInteractionEnabled = true
         return image
     }()
+    
+    //var
     
     override init(frame : CGRect) {
         super.init(frame : frame)
@@ -52,7 +85,7 @@ class VisibleGridItem: UIView {
         addConstraintsWithFormat(format: "V:|[v0]|", views: imageView)
     }
     
-    @objc func imageTapped(gesture: UITapGestureRecognizer)
+    func imageTapped(gesture: UITapGestureRecognizer)
     {
         print("tapped")
     }
