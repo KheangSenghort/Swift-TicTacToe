@@ -10,9 +10,7 @@ import UIKit
 
 struct Game {
     struct Board {
-        static let Width = 3
-        static let Height = 3
-        static let Size = Width * Height
+        static let Size = 3
     }
     
     enum GridItem {
@@ -71,14 +69,14 @@ class GameBoard {
     // maps 2D grid position to linear position
     //
     func get1DPosition(from point:(x: Int, y: Int)) -> Int {
-        return point.x + Game.Board.Width * point.y;
+        return point.x + Game.Board.Size * point.y;
     }
     
     // maps linear position to 2D grid position
     //
     func get2DPosition(from index: Int) -> (x: Int, y: Int) {
-        let x = index % Game.Board.Width;
-        let y = index / Game.Board.Width;
+        let x = index % Game.Board.Size;
+        let y = index / Game.Board.Size;
         return (x, y)
     }
     
@@ -88,14 +86,14 @@ class GameBoard {
         }
     }
     
-    // mark a grid item as locked, if a valid move is made with 2D position
+    // mark grid item locked, if a valid move is made with 2D position
     //
     func markGridItem(at pos:(x: Int, y: Int), with player: Game.Player) -> Bool {
         let index = get1DPosition(from: pos)
         return markGridItem(at: index, with: player)
     }
     
-    // mark grid item as locked, if a valid move is made with 1D index
+    // mark grid item locked, if a valid move is made with 1D index
     //
     func markGridItem(at index: Int, with player: Game.Player) -> Bool {
         let gridItem = gridItems[index]

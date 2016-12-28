@@ -44,6 +44,7 @@ class GridItemView: UIView {
         layer.borderWidth = 1
         layer.borderColor = UIColor.black.cgColor
         backgroundColor = .white
+        
         addSubview(imageView)
         
         addConstraintsWithFormat(format: "H:|[v0]|", views: imageView)
@@ -55,6 +56,7 @@ class GridItemView: UIView {
     }
     
     // callback for ontap (instead of a delegate method)
+    //
     var onViewTap: (UITapGestureRecognizer)->() = { gesture in
         debugPrint("onViewTap")
     }
@@ -66,6 +68,7 @@ class GridItemView: UIView {
 
 // extension to UIView addConstraints
 // makes it easier to use visual format language on new views
+//
 extension UIView {
     
     func addConstraintsWithFormat(format: String, views: UIView...) {

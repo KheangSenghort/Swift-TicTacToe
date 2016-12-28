@@ -44,14 +44,14 @@ class ScoreManager {
         score.column[pos.x] = (score.column[pos.x] ?? 0) + 1
         score.row[pos.y] = (score.row[pos.y] ?? 0) + 1
         
-        guard let col = score.column[pos.x], col < 3, let row = score.row[pos.y], row < 3 else {
+        guard let col = score.column[pos.x], col < Game.Board.Size, let row = score.row[pos.y], row < Game.Board.Size else {
             return true
         }
         
         return false
     }
     
-    // check diagonal and vertical wins
+    // check diagonal wins
     //
     private func checkDiagonalWins(in score: Score, pos:(x: Int, y: Int)) -> Bool {
         score.diagonal[0] = (score.diagonal[0] ?? 0)
@@ -60,11 +60,11 @@ class ScoreManager {
         if pos.x == pos.y { //first diagonal
             score.diagonal[0] = (score.diagonal[0] ?? 0) + 1
         }
-        if (Game.Board.Width - pos.x - 1) == pos.y { //second diagonal
+        if (Game.Board.Size - pos.x - 1) == pos.y { //second diagonal
             score.diagonal[1] = (score.diagonal[1] ?? 0) + 1
         }
         
-        guard let diagOne = score.diagonal[0], diagOne < 3, let diagTwo = score.diagonal[1], diagTwo < 3 else {
+        guard let diagOne = score.diagonal[0], diagOne < Game.Board.Size, let diagTwo = score.diagonal[1], diagTwo < Game.Board.Size else {
             return true
         }
         
