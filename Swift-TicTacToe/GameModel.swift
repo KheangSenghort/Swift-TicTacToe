@@ -60,7 +60,8 @@ class GameBoard {
     
     private let gridItems: [GridItem] = {
         var items = [GridItem]()
-        for _ in 0..<Game.Board.Size {
+        let boardSize = Game.Board.Size * Game.Board.Size
+        for _ in 0..<boardSize {
             items.append(GridItem())
         }
         return items
