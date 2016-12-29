@@ -6,7 +6,7 @@ Tic Tac Toe Game in Swift 3.0
 <img src="https://raw.githubusercontent.com/llahiru/Swift-TicTacToe/master/screens/screen03.png" width="250">
 
 # Todo
-* Highlight the winning move (line)
+* Highlight the winning grid items (line)
 * Add Game Menu
 * Save scores from previous sessions
 
