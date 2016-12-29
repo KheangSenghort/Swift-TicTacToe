@@ -10,6 +10,7 @@ Tic Tac Toe Game in Swift 3.0
 * Add Game Menu
 * Save scores from previous sessions
 * If more features are added to the gameplay in the future, if might be worth having separate .swift files for Model and Controller classes
+* Use Visual Format Language & NSLayoutConstraint instead of Storyboard for main game view
 
 # Note
 In this implementation, I used callbacks over delegation. I believe for a simple game application like this using callbacks in Swift (instead of delegates) reduce unnecessary code and provide decoupled, easy to test, and clear code.
